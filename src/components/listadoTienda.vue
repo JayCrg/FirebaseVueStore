@@ -8,8 +8,8 @@ import { useCollection, useFirestore } from 'vuefire'
 defineProps({ 'categoria': String })
 
 //leer por categoria
-const db = useFirestore()
-const productos = useCollection(query(collection(db, 'productos'), where("category", "==", categoria)))
+// const db = useFirestore()
+// const productos = useCollection(query(collection(db, 'productos'), where("category", "==", categoria)))
 
 
 </script>

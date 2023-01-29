@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Secular+One&family=Teko&display=swap');
+
 /*puntos de rumptura 	≥576px 	≥768px 	≥992px*/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
+
+:root {
     /*setting de la paleta de colores*/
     font-size: 62.5%;
     --primary-color: #EFF5F5;
@@ -16,31 +18,37 @@
     --auxQuinary-color: #cb932c;
     font-family: 'Josefin Sans', sans-serif;
 }
-.router{
+
+#app .router {
     text-decoration: none;
     color: var(--primary-color);
 }
-body{
+
+#app body {
     width: 100vw;
     margin: 0 auto;
     max-width: 2000px;
 }
-.container{
+
+#app .container {
     /*grid princiapal, aunqeu lo iremos modificando*/
     display: grid;
     grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 26rem)) minmax(6rem, 1fr);
     grid-template-rows: repeat(3, minmax(min-content, 14rem));
     background-color: var(--primary-color);
 }
-.color{
+
+#app .color {
     color: var(--quinary-color);
 }
+
 /*un aside para la pantalla de carg*/
-aside{
-display: none;
-font-size: 5rem;
+#app aside {
+    display: none;
+    font-size: 5rem;
 }
-aside.carga{
+
+#app aside.carga {
     display: flex;
     position: absolute;
     justify-content: center;
@@ -53,12 +61,12 @@ aside.carga{
     height: 150%;
 }
 
-body.carga{
+#app body.carga {
     overflow: hidden;
 }
 
 /*****************************************/
-main{
+#app main {
     grid-column: 1/ -1;
     grid-row: 2/3;
     background-color: var(--tertiary-color);
@@ -67,26 +75,29 @@ main{
     grid-template-rows: repeat(5, minmax(min-content, 14rem));
     gap: 2rem;
 }
-#hero{
+
+#app #hero {
     grid-column: 1/ -1;
     grid-row: 1/2;
     display: grid;
     gap: 1rem;
 }
-#hero img{
+
+#app #hero img {
     width: 100%;
     height: 100%;
 }
 
 /*ponemos una foto al lado del texto*/
-#eslogan{
+#app #eslogan {
     grid-column: 2/-2;
     grid-row: 2/3;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
 }
-.imgEslogan{
+
+#app .imgEslogan {
     grid-column: 1/2;
     grid-row: 1/2;
     width: 100%;
@@ -94,14 +105,16 @@ main{
     align-items: center;
     justify-content: center;
 }
-.imgEslogan img{
+
+#app .imgEslogan img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 0.5rem;
-    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0,0,0,0.5);
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
 }
-.textoEslogan{
+
+#app .textoEslogan {
     grid-column: 2/3;
     grid-row: 1/2;
     display: flex;
@@ -110,17 +123,20 @@ main{
     justify-content: center;
     margin-left: 1rem;
 }
-.textoEslogan h1{
+
+#app .textoEslogan h1 {
     font-size: 3rem;
     color: var(--primary-color);
     text-align: right;
 }
-.textoEslogan p{
+
+#app .textoEslogan p {
     font-size: 1.5rem;
     color: var(--primary-color);
     text-align: right;
 }
-.textoEslogan button{
+
+#app .textoEslogan button {
     align-self: flex-end;
     width: 55%;
     font-size: 1.5rem;
@@ -132,42 +148,46 @@ main{
     margin-top: 1rem;
     cursor: pointer;
 }
-.textoEslogan button:hover{
+
+#app #app .textoEslogan button:hover {
     background-color: var(--primary-color);
     color: var(--quaternary-color);
 }
 
 /*hacemos un carrusel de imagenes con js*/
-#carrusel{
+#app #carrusel {
     grid-column: 2/-2;
     grid-row: 3/4;
     display: grid;
     grid-template-columns: minmax(3rem, 1fr) repeat(8, minmax(min-content, 26rem)) minmax(3rem, 1fr);
     grid-template-rows: 1fr;
 }
-#imagenesCarrusel{
+
+#app #app #imagenesCarrusel {
     grid-column: 2/-2;
     grid-row: 1/2;
     width: 100%;
     height: 100%;
 }
-#carrusel img{
+
+#app #carrusel img {
     width: inherit;
     height: inherit;
-    object-fit:cover;
+    object-fit: cover;
     border-radius: 0.5rem;
-    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0,0,0,0.5);
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 /*en la parte redes sociales, ponemos un texto y los iconos*/
-#siguenos{
+#app #siguenos {
     grid-column: 2/-2;
     grid-row: 4/5;
     display: grid;
-    grid-template-columns:  1fr repeat(3, minmax(5rem, 26rem)) 1fr;
+    grid-template-columns: 1fr repeat(3, minmax(5rem, 26rem)) 1fr;
     grid-template-rows: 1fr;
 }
-.textoRedes{
+
+#app .textoRedes {
     grid-column: 7/8;
     grid-row: 1/2;
     display: flex;
@@ -179,39 +199,47 @@ main{
     color: var(--primary-color);
     margin-left: 2rem;
 }
-.textoRedes .iconos a i{
+
+#app .textoRedes .iconos a i {
     color: var(--primary-color);
 }
-.textoRedes .iconos{
+
+#app .textoRedes .iconos {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
     font-size: larger;
 }
-.textoRedes .iconos a i:hover{
+
+#app .textoRedes .iconos a i:hover {
     color: var(--quinary-color);
 }
-.imageneRedes.ropa{
+
+#app .imageneRedes.ropa {
     grid-column: 2/3;
     grid-row: 1/2;
 }
-.imageneRedes.ropa2{
+
+#app .imageneRedes.ropa2 {
     grid-column: 3/4;
     grid-row: 1/2;
 }
-.imageneRedes.ropa3{
+
+#app .imageneRedes.ropa3 {
     grid-column: 4/5;
     grid-row: 1/2;
 }
-.imageneRedes img{
+
+#app .imageneRedes img {
     width: 100%;
     height: 100%;
-    object-fit:cover;
+    object-fit: cover;
     border-radius: 0.5rem;
-    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0,0,0,0.5);
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
 }
+
 /*en la parte de contacto, ponemos un texto y un psudoformulario*/
-#contacto{
+#app #contacto {
     grid-column: 2/-2;
     grid-row: 5/6;
     display: grid;
@@ -219,7 +247,8 @@ main{
     grid-template-columns: 1fr repeat(3, minmax(min-content, 10rem)) 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
-#contacto h1{
+
+#app #contacto h1 {
     grid-column: 1/-1;
     grid-row: 1/2;
     font-size: 3rem;
@@ -227,7 +256,8 @@ main{
     text-align: center;
     margin-bottom: 1rem;
 }
-#contacto p{
+
+#app #contacto p {
     grid-column: 1/-1;
     grid-row: 2/3;
     font-size: 1.5rem;
@@ -235,7 +265,8 @@ main{
     text-align: center;
     margin-bottom: 1rem;
 }
-#contacto input{
+
+#app #contacto input {
     grid-column: 2/5;
     grid-row: 3/4;
     align-self: center;
@@ -245,10 +276,12 @@ main{
     padding: 1rem 1rem;
     margin-bottom: 1rem;
 }
-#contacto input:invalid{
+
+#app #contacto input:invalid {
     background-color: lightcoral
 }
-#contacto button{
+
+#app #contacto button {
     grid-column: 4/5;
     grid-row: 4/5;
     justify-self: right;
@@ -262,7 +295,7 @@ main{
 
 /**************************************/
 /*footer agdaptable para muchos dipositivos y header gracias a un grid en el header y un flex en el footer*/
-footer{
+#app footer {
     grid-column: 1/ -1;
     grid-row: 3/4;
     background-color: var(--secondary-color);
@@ -271,16 +304,18 @@ footer{
     gap: 6%;
     font-size: calc(1rem + 0.5vw);
 }
-footer section{
+
+#app footer section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: top;
     gap: 1rem;
     margin-bottom: 1rem;
-    margin-top:1rem;
+    margin-top: 1rem;
 }
-footer ul{
+
+#app footer ul {
     display: flex;
     flex-direction: column;
     align-items: baseline;
@@ -289,7 +324,8 @@ footer ul{
     list-style: none;
     margin-left: 1rem;
 }
-#metodoPago ul{
+
+#app #metodoPago ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -297,15 +333,18 @@ footer ul{
     justify-content: center;
     font-size: large;
 }
-footer a{
+
+#app footer a {
     text-decoration: none;
     color: var(--tertiary-color);
 }
-footer a:hover{
+
+#app footer a:hover {
     color: var(--quaternary-color);
 }
+
 /* ************************************ */
-header{
+#app header {
     grid-column: 1/ -1;
     grid-row: 1/2;
     display: grid;
@@ -315,16 +354,19 @@ header{
     justify-content: space-between;
     background-color: var(--secondary-color);
 }
-.logo{
+
+#app .logo {
     grid-column: 1/2;
     grid-row: 1/2;
     width: 8rem;
     margin-left: 1rem;
 }
-.logo:hover{
+
+#app .logo:hover {
     cursor: pointer;
 }
-nav{
+
+#app nav {
     grid-column: 1/-1;
     grid-row: 2/3;
     display: flex;
@@ -332,75 +374,88 @@ nav{
     justify-content: center;
     gap: 1rem;
 }
-header img{
+
+#app header img {
     width: inherit;
     height: inherit;
     object-fit: cover;
 }
+
 /*aqui esta la lista de categorias*/
-nav ul {
-	display: flex;
-	align-items: center;
-	list-style: none;
-	border: none;
-	border-radius: 0.5rem;
-	padding: 0.5rem 1rem;
-	gap: calc(1rem + 2vw);
+#app nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    gap: calc(1rem + 2vw);
     font-size: calc(0.5rem + 1vw);
 }
-nav ul li {
-	padding: 0.7rem 1.5rem;
+
+#app nav ul li {
+    padding: 0.7rem 1.5rem;
     border-radius: 0.2rem;
-    background-color: var( --tertiary-color);
+    background-color: var(--tertiary-color);
     color: white;
 }
-nav ul li.marcada {
+
+#app nav ul li.marcada {
     background-color: var(--quaternary-color);
     box-shadow: .2rem 0.2rem 0.2rem 0 var(--tertiary-color);
 }
-nav ul li:hover{
+
+#app nav ul li:hover {
     background-color: var(--quaternary-color);
     cursor: pointer;
 }
+
 /*aqui esta el inicio de sesion y el carro*/
-.log-shop{
+#app .log-shop {
     grid-column: 6/7;
     grid-row: 1/2;
     margin-right: 1rem;
 }
-.log-shop ul{
+
+#app .log-shop ul {
     display: flex;
     align-items: center;
-    gap:1.5rem;
+    gap: 1.5rem;
     width: 100%;
     list-style: none;
     margin-right: 2.5rem;
 }
-.log-shop ul button{
+
+#app .log-shop ul button {
     padding: 0.7rem 1.5rem;
-    border:none;
+    border: none;
     border-radius: 0.2rem;
-    background-color: var( --tertiary-color);
+    background-color: var(--tertiary-color);
     color: white;
     font-size: large;
 }
-.log-shop ul button:hover{
+
+#app .log-shop ul button:hover {
     background-color: var(--quaternary-color);
     cursor: pointer;
 }
-.log-shop ul li *{
+
+#app .log-shop ul li * {
     font-size: 2.3rem;
     color: black;
 }
-.log-shop ul li:hover{
+
+#app .log-shop ul li:hover {
     cursor: pointer;
 }
+
 /*cuando hay algo en el carro se ve un numero*/
-.cantidadProductos{
+#app .cantidadProductos {
     display: none;
     font-size: 1.5rem;
 }
-.cantidadProductos.llena{
+
+#app .cantidadProductos.llena {
     display: inline-flex;
     position: relative;
     top: -1.5rem;
@@ -417,44 +472,44 @@ nav ul li:hover{
 /******************************************/
 /*PRODUCTOS*/
 
-main.productos{
+#app main.productos {
     grid-column: 1/ -1;
     grid-row: 2/3;
     background-color: var(--tertiary-color);
     display: grid;
-    grid-template-rows: min-content minmax(50rem,1fr);
+    grid-template-rows: min-content minmax(50rem, 1fr);
     grid-template-columns: repeat(8, 1fr);
     gap: 2rem;
     margin: 0 auto;
 }
-#presentacion{
+
+#app #presentacion {
     margin-top: 2rem;
     grid-column: 1/-1;
     grid-row: 1/2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
-#presentacion h1{
+
+#app #presentacion h1 {
     text-align: center;
     font-size: 3.5rem;
     color: var(--primary-color);
 }
+
 /*usamos autofill para que los productos se adapten al tamaño de la pantalla*/
-#listadoProductos{
+#app #listadoProductos {
     grid-column: 2/-2;
     grid-row: 2/3;
     max-width: 1200px;
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));    
-    grid-auto-rows: minmax(5rem,35rem);
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-auto-rows: minmax(5rem, 35rem);
     gap: 5rem;
     justify-items: center;
     align-items: center;
     margin-bottom: 5rem;
 }
-#listadoProductos .producto{
+
+#app #listadoProductos .producto {
     width: 100%;
     height: 100%;
     background-color: var(--secondary-color);
@@ -466,22 +521,26 @@ main.productos{
     justify-content: center;
     gap: 1rem;
     padding: 1rem;
-    
+
 }
-#listadoProductos .producto:hover{
+
+#app #listadoProductos .producto:hover {
     cursor: pointer;
 }
-#listadoProductos .producto .imagenProducto{
+
+#app #listadoProductos .producto .imagenProducto {
     width: 100%;
     height: 90%;
     border-radius: 1rem 1rem 0 0;
     margin-bottom: -3.5rem;
 }
-#listadoProductos .producto p{
+
+#app #listadoProductos .producto p {
     font-size: 1.5rem;
     margin: 0;
 }
-.imagenProducto img{
+
+#app .imagenProducto img {
     width: inherit;
     height: inherit;
     object-fit: fill;
@@ -489,42 +548,48 @@ main.productos{
     display: flex;
 }
 
-.ordenar select{
+#app .ordenar select {
     padding: 0.7rem 1.5rem;
-    border:none;
+    border: none;
     border-radius: 0.2rem;
-    background-color: var( --primary-color);
+    background-color: var(--primary-color);
     color: var(--tertiary-color);
     font-size: large;
     border-radius: 1rem;
-    margin:1rem
+    margin: 1rem
 }
-.ordenar select:hover{
+
+#app .ordenar select:hover {
     background-color: var(--quaternary-color);
     cursor: pointer;
     color: var(--secondary-color);
 }
-.ordenar span{
+
+#app .ordenar span {
     font-size: 2.3rem;
     color: var(--primary-color);
 }
+
 /*******************************************/
 /*DETALLE PRODUCTO*/
-main.detalle{
+#app main.detalle {
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: min-content minmax(50rem,1fr);
+    grid-template-rows: min-content minmax(50rem, 1fr);
+    margin-bottom: 30rem;
 }
+
 /*hacemos un grid que nos permita colocar la imagen y la descripcion del producto*/
-.detalle section{
+#app .detalle section {
     grid-column: 1/-1;
     grid-row: 2/3;
     gap: 2rem;
     background-color: var(--tertiary-color);
     margin-bottom: 2rem;
 }
-.detalle section .imagenProducto{
+
+#app .detalle section .imagenProducto {
     grid-column: 1/4;
-    grid-row:2/3;
+    grid-row: 1/2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -534,13 +599,15 @@ main.detalle{
     min-width: 30rem;
 
 }
-.detalle section .imagenProducto img{
-    width: 90%;
-    height: 80%;
+
+#app .detalle section .imagenProducto img {
+    width: 50%;
+    height: 50%;
     object-fit: fill;
     display: flex;
 }
-.detalle section .textoProducto{
+
+#app .detalle section .textoProducto {
     grid-column: 1/4;
     grid-row: 3/4;
     display: flex;
@@ -551,61 +618,71 @@ main.detalle{
     padding: 1rem;
     background-color: var(--secondary-color);
 }
-.detalle section .textoProducto p{
+
+#app .detalle section .textoProducto p {
     font-size: 1.5rem;
     margin: 0;
     color: black;
 }
-.detalle section .textoProducto h1{
+
+#app .detalle section .textoProducto h1 {
     font-size: 3.5rem;
     color: var(--tertiary-color);
 }
-.detalle section .textoProducto p:first-of-type{
+
+#app .detalle section .textoProducto p:first-of-type {
     font-size: 2rem;
     color: var(--quaternary-color);
 }
 
-.detalle section .textoProducto select{
+#app .detalle section .textoProducto select {
     padding: 0.7rem 1.5rem;
-    border:none;
-    background-color: var( --primary-color);
+    border: none;
+    background-color: var(--primary-color);
     color: var(--tertiary-color);
     font-size: large;
     border-radius: 1rem;
-    margin:1rem;
+    margin: 1rem;
     border: 1px solid var(--tertiary-color);
 }
-.detalle section .textoProducto select:hover{
+
+#app .detalle section .textoProducto select:hover {
     background-color: var(--quaternary-color);
     cursor: pointer;
     color: var(--secondary-color);
 }
-.detalle section .textoProducto button{
+
+#app .detalle section .textoProducto button {
     padding: 0.7rem 1.5rem;
-    border:none;
+    border: none;
     border-radius: 0.2rem;
-    background-color: var( --primary-color);
+    background-color: var(--primary-color);
     color: var(--tertiary-color);
     font-size: large;
-    margin:1rem;
+    margin: 1rem;
     border: 1px solid var(--tertiary-color);
 }
-.detalle section .textoProducto button:hover{
+
+#app .detalle section .textoProducto button:hover {
     background-color: var(--quinary-color);
     cursor: pointer;
 }
-.detalle section .textoProducto button:active{
+
+#app .detalle section .textoProducto button:active {
     background-color: var(--auxQuinary-color);
     cursor: pointer;
-}/*******************************************/
+}
+
+/*******************************************/
 /*CARRITO*/
 /*en el carrito damos diseño a cada uno de los objetos que se van a mostrar con grid, tanto fuera como dentro de estos*/
-main.carrito{
+#app main.carrito {
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: min-content minmax(min-content,1fr) min-content;
+    grid-template-rows: min-content minmax(min-content, 1fr) min-content;
     min-height: 50vh;
 }
-.carrito section:first-child{
+
+#app .carrito section:first-child {
     grid-column: 1/-1;
     grid-row: 1/2;
     gap: 2rem;
@@ -616,7 +693,8 @@ main.carrito{
     font-size: 3rem;
     margin-top: 1rem;
 }
-.carrito section:first-child + section {
+
+#app .carrito section:first-child+section {
     grid-column: 1/-1;
     grid-row: 2/3;
     gap: 2rem;
@@ -627,7 +705,8 @@ main.carrito{
     display: flex;
     flex-direction: column;
 }
-.carrito section:first-child + section .producto{
+
+#app .carrito section:first-child+section .producto {
     grid-column: 1/4;
     grid-row: 1/2;
     gap: 1rem;
@@ -635,23 +714,27 @@ main.carrito{
     background-color: var(--secondary-color);
     display: grid;
     grid-template-columns: minmax(5rem, 20rem) 1fr;
-    grid-template-rows: minmax(5rem,15rem);
+    grid-template-rows: minmax(5rem, 15rem);
 }
-.carrito section:first-child + section .producto .imagenProductoCarrito {
+
+#app .carrito section:first-child+section .producto .imagenProductoCarrito {
     grid-column: 1/2;
     grid-row: 1/2;
     box-shadow: 0.2rem 0.2rem 0.2rem 0 var(--primary-color);
     padding: 1rem;
     background-color: var(--secondary-color);
 }
-.carrito section:first-child + section .producto .imagenProductoCarrito img{
+
+#app .carrito section:first-child+section .producto .imagenProductoCarrito img {
     width: 100%;
     height: 100%;
-    object-fit:fill;
+    object-fit: fill;
     border-radius: 0.5rem;
-    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0,0,0,0.5);;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+    ;
 }
-.carrito section:first-child + section .producto .info{
+
+#app .carrito section:first-child+section .producto .info {
     grid-column: 2/3;
     grid-row: 1/2;
     display: flex;
@@ -663,46 +746,55 @@ main.carrito{
     margin-top: 2rem;
     background-color: var(--secondary-color);
 }
-.carrito section:first-child + section .producto .info p{
+
+#app .carrito section:first-child+section .producto .info p {
     font-size: 2rem;
     color: black;
 }
-.cambiarCantidad{
+
+#app .cambiarCantidad {
     margin-top: 1rem;
 }
+
 /*funcionalidades varias de los botones*/
-.restar{
+#app .restar {
     background-color: var(--tertiary-color);
     border-radius: 30%;
     padding: 0.5rem;
 }
-.sumar{
+
+#app .sumar {
     background-color: var(--tertiary-color);
     border-radius: 30%;
     padding: 0.5rem;
 }
-.restar:hover{
+
+#app .restar:hover {
     cursor: pointer;
     transform: scale(1.3);
     transition: 0.5s;
 }
-.sumar:hover{
+
+#app .sumar:hover {
     cursor: pointer;
     transform: scale(1.3);
     transition: 0.5s;
 }
-.carrito section:first-child + section .producto .info>p:first-of-type{
+
+#app .carrito section:first-child+section .producto .info>p:first-of-type {
     font-size: 2rem;
     color: var(--quaternary-color);
 }
-.cambiarCantidad{
+
+#app .cambiarCantidad {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 1rem;
 }
-.eliminar{
+
+#app .eliminar {
     grid-row: 2/3;
     grid-column: 2/3;
     border-radius: 30%;
@@ -712,24 +804,28 @@ main.carrito{
     justify-self: flex-end;
     font-size: 2rem;
 }
-.eliminar:hover{
+
+#app .eliminar:hover {
     cursor: pointer;
     color: #cb932c;
     transform: scale(1.5);
     transition: 0.5s;
 }
-.carrito section:last-child{
+
+#app .carrito section:last-child {
     grid-column: 7/8;
     grid-row: 3/4;
     gap: 2rem;
     background-color: var(--tertiary-color);
     margin-bottom: 2rem;
 }
-.carrito section:last-child p{
+
+#app .carrito section:last-child p {
     font-size: 2rem;
     color: var(--primary-color);
 }
-.tallaje{
+
+#app .tallaje {
     grid-column: 1/2;
     grid-row: 2/3;
     gap: 2rem;
@@ -740,7 +836,7 @@ main.carrito{
     margin-top: 1rem;
 }
 
-.carrito section:last-child button{
+#app .carrito section:last-child button {
     grid-column: 1/2;
     grid-row: 1/2;
     padding: 1rem;
@@ -750,18 +846,23 @@ main.carrito{
     font-size: 2rem;
     border: 1px solid var(--tertiary-color);
 }
+
 /*******************************************/
 /*FORMULARIOS*/
-main.formulario{
+#app main.formulario {
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: minmax(min-content,1fr) minmax(min-content,1fr);
+    grid-template-rows: minmax(min-content, 1fr) minmax(min-content, 1fr);
     align-items: center;
     min-height: 50vh;
 }
-.welcome, .error{
-    display:none
+
+#app .welcome,
+#app .error {
+    display: none
 }
-#signup, #login{
+
+#app #signup,
+#app #login {
     align-self: center;
     justify-self: center;
     padding: 1rem;
@@ -771,15 +872,19 @@ main.formulario{
     font-size: 2.5rem;
     max-width: 50rem;
 }
-#login{
+
+#app #login {
     grid-column: 1/-1;
     grid-row: 2/3;
 }
-#signup{
+
+#app #signup {
     grid-column: 1/-1;
     grid-row: 1/2;
 }
-#signup input, #login input{
+
+#app #signup input,
+#app #login input {
     padding: .5rem;
     border-radius: 0.5rem;
     background-color: var(--secondary-color);
@@ -787,7 +892,9 @@ main.formulario{
     font-size: 2rem;
     margin: 1rem;
 }
-#signup button, #login button{
+
+#app #signup button,
+#app #login button {
     padding: .5rem;
     border-radius: 0.5rem;
     background-color: var(--primary-color);
@@ -796,29 +903,42 @@ main.formulario{
     margin: 1rem;
     color: var(--tertiary-color);
 }
-#signup button:hover, #login button:hover{
+
+#app #signup button:hover,
+#app #login button:hover {
     cursor: pointer;
     transform: scale(1.2);
     transition: 0.5s;
 }
-#signup button:active, #login button:active{
-transform: scale(1);
-transition: 0.25s;
+
+#app #signup button:active,
+#app #login button:active {
+    transform: scale(1);
+    transition: 0.25s;
 }
-#signup input:focus, #login input:focus{
+
+#signup input:focus,
+#app #login input:focus {
     outline: none;
     border: 1px solid var(--primary-color);
 }
-#signup input:valid, #login input:valid{
+
+#app #signup input:valid,
+#app #login input:valid {
     border: 1px solid var(--primary-color);
 }
-#signup input:invalid, #login input:invalid{
+
+#app #signup input:invalid,
+#app #login input:invalid {
     border: 1px solid var(--primary-color);
 }
-#signup input:required, #login input:required{
+
+#app #signup input:required,
+#app #login input:required {
     border: 1px solid var(--primary-color);
 }
-.welcome.sign{
+
+#app .welcome.sign {
     grid-column: 4/5;
     grid-row: 1/2;
     flex-direction: column;
@@ -832,18 +952,19 @@ transition: 0.25s;
     display: none;
 }
 
-.iniciado{
-    display:flex;
+#app .iniciado {
+    display: flex;
     animation: opacidad 1s ease-in-out;
 }
-.finalizado{
+
+#app .finalizado {
     position: absolute;
     animation: ocultar 1s ease-in-out;
     display: none;
 }
 
 /* PANEL DE CONTROL */
-#admin{
+#app #admin {
     grid-row: 1/2;
     grid-column: 1/-1;
     display: flex;
@@ -851,7 +972,8 @@ transition: 0.25s;
     align-items: center;
     justify-content: space-evenly;
 }
-#admin .formularioAdmin{
+
+#app #admin .formularioAdmin {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -864,7 +986,8 @@ transition: 0.25s;
     font-size: 2.5rem;
     max-width: 50rem;
 }
-#admin .formularioAdmin input{
+
+#app #admin .formularioAdmin input {
     padding: .5rem;
     border-radius: 0.5rem;
     background-color: var(--secondary-color);
@@ -872,7 +995,8 @@ transition: 0.25s;
     font-size: 2rem;
     margin: 1rem;
 }
-#admin .formularioAdmin button{
+
+#app #admin .formularioAdmin button {
     padding: .5rem;
     border-radius: 0.5rem;
     background-color: var(--primary-color);
@@ -881,32 +1005,27 @@ transition: 0.25s;
     margin: 1rem;
     color: var(--tertiary-color);
 }
-#admin .formularioAdmin button:hover{
+
+#app #admin .formularioAdmin button:hover {
     cursor: pointer;
     transform: scale(1.2);
     transition: 0.5s;
 }
-#admin .formularioAdmin button:active{
+
+#app #admin .formularioAdmin button:active {
     transform: scale(1);
     transition: 0.25s;
 }
 
-#admin .formularioAdmin input[type="file"]{
+#app #admin .formularioAdmin input[type="file"] {
     padding: 0;
     border: none;
     background-color: transparent;
     font-size: 2rem;
     margin: 1rem;
 }
-#admin .formularioAdmin textarea{
-    padding: .5rem;
-    border-radius: 0.5rem;
-    background-color: var(--secondary-color);
-    border: 1px solid var(--primary-color);
-    font-size: 2rem;
-    margin: 1rem;
-}
-#admin .formularioAdmin select{
+
+#app #admin .formularioAdmin textarea {
     padding: .5rem;
     border-radius: 0.5rem;
     background-color: var(--secondary-color);
@@ -915,7 +1034,16 @@ transition: 0.25s;
     margin: 1rem;
 }
 
-#admin .presentacion{
+#app #admin .formularioAdmin select {
+    padding: .5rem;
+    border-radius: 0.5rem;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+#app #admin .presentacion {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -928,13 +1056,16 @@ transition: 0.25s;
     font-size: 2.5rem;
     max-width: 50rem;
 }
-#admin .presentacion h1{
+
+#app #admin .presentacion h1 {
     font-size: 3rem;
 }
-#admin .presentacion p{
+
+#app #admin .presentacion p {
     font-size: 2rem;
 }
-#admin .presentacion button{
+
+#app #admin .presentacion button {
     padding: .5rem;
     border-radius: 0.5rem;
     background-color: var(--primary-color);
@@ -943,14 +1074,19 @@ transition: 0.25s;
     margin: 1rem;
     color: var(--tertiary-color);
 }
-#admin .presentacion button:hover{
+
+#app #admin .presentacion button:hover {
     cursor: pointer;
     transform: scale(1.2);
     transition: 0.5s;
 }
 
+
+
+
+
 /* Listado de objetos admin */
-#listaObjetos{
+#app #listaObjetos {
     margin-top: 2rem;
     grid-row: 2/3;
     grid-column: 1/-1;
@@ -958,12 +1094,14 @@ transition: 0.25s;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    gap: 1rem; 
+    gap: 1rem;
 }
-#listaObjetos h2{
+
+#app #listaObjetos h2 {
     font-size: 3rem;
 }
-#listaObjetos .producto{
+
+#app #listaObjetos .producto {
     grid-template-columns: 1fr;
     grid-template-rows: minmax(10rem, min-content) 1fr 1fr;
     display: flex;
@@ -978,17 +1116,20 @@ transition: 0.25s;
     font-size: 2.5rem;
     max-width: 50rem;
 }
-#listaObjetos .imagenAcompañamiento{
+
+#app #listaObjetos .imagenAcompañamiento {
     grid-column: 1/2;
     grid-row: 1/2;
     object-fit: cover;
 }
-.imagenAcompañamiento img{
+
+#app .imagenAcompañamiento img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-#listaObjetos .info{
+
+#app #listaObjetos .info {
     grid-column: 1/2;
     grid-row: 2/3;
     display: flex;
@@ -997,7 +1138,8 @@ transition: 0.25s;
     justify-content: space-evenly;
     gap: 1rem;
 }
-.eleminarDeBD{
+
+#app .eleminarDeBD {
     padding: .5rem;
     border-radius: 0.5rem;
     background-color: var(--primary-color);
@@ -1007,34 +1149,36 @@ transition: 0.25s;
     color: var(--tertiary-color);
 }
 
-
-
-
-@keyframes opacidad{
-    0%{
+@keyframes opacidad {
+    0% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
-@keyframes ocultar{
-    0%{
+
+@keyframes ocultar {
+    0% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 0;
         diplsay: none;
     }
 }
 
 @media screen and (min-width: 576px) {
+
     /*cuando la pantalla es lo sucientemente grande para que se vea bien*/
-    main.detalle{
-        display:flex;
+    #app main.detalle {
+        display: flex;
     }
-    #especificaciones{
-       display: flex;
+
+    #app #especificaciones {
+        display: flex;
         flex-direction: row;
         grid-template-columns: repeat(8, 1fr);
         grid-template-rows: 1fr, 1fr;
@@ -1042,13 +1186,15 @@ transition: 0.25s;
         margin-bottom: 2rem;
         margin-top: 2rem;
     }
-    .imagenProducto{
+
+    #app .imagenProducto {
         grid-column: 1/4;
         grid-row: 1/2;
         width: 100%;
         height: 100%;
     }
-    .textoProducto{
+
+    #app .textoProducto {
         grid-column: 4/9;
         grid-row: 2/3;
 

@@ -88,10 +88,10 @@ onAuthStateChanged(auth, (user) => {
       <input type="text" id="titulo" v-model=titulo>
       <label for="categoria">Category</label>
       <select name="categoria" id="categoria" v-model="categoria">
-        <option value="men's clothing">Men's clothing</option>
-        <option value="women's clothing">Women's clothing</option>
-        <option value="electronics">Electronics</option>
-        <option value="jewelery">Jewelery</option>
+        <option value="Men's clothing">Men's clothing</option>
+        <option value="Women's clothing">Women's clothing</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Jewelery">Jewelery</option>
       </select>
       <textarea name="descripcion" id="descripcion" cols="45" rows="5" placeholder="Insert description"
         v-model="descripcion"></textarea>
@@ -123,3 +123,4 @@ onAuthStateChanged(auth, (user) => {
         </div>
   </div>
 </template>
+

@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, onMounted } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { VueFire, VueFireAuth } from 'vuefire'
@@ -8,7 +8,7 @@ import { ref } from 'vue'
 import './assets/main.css'
 
 
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { counter, library } from '@fortawesome/fontawesome-svg-core'
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* import specific icons */
@@ -26,6 +26,14 @@ import admin from './components/adminPanel.vue'
 import { auth } from './firebase.js'
 import { onAuthStateChanged } from 'firebase/auth'
 
+window.onload = function () {
+  document.getElementsByTagName('body')[0].classList.add('carga')
+  document.getElementsByTagName('aside')[0].classList.add('carga')
+
+  document.getElementsByTagName('body')[0].classList.remove('carga')
+  document.getElementsByTagName('aside')[0].classList.remove('carga')
+}
+
 var estaAutentificado = ref(false)
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -37,7 +45,6 @@ onAuthStateChanged(auth, (user) => {
     router.push('/')
   }
 })
-
 
 const routes = [
   {
@@ -53,7 +60,11 @@ const routes = [
   {
     path: '/listadoTienda',
     name: 'listadoTienda',
-    component: listadoTienda
+    component: listadoTienda,
+    props: true,
+    params: {
+      categoria : String
+    }
   },
   {
     path: '/carrito',
@@ -72,12 +83,28 @@ const routes = [
       }
     }
   },
+  {
+    path: '/detalle/:id/:title/:price/:description/:image/:category/:rating/:count',
+    name: 'detalle',
+    component: () => import('./components/detalle.vue'),
+    props: true,
+    params: {
+      id: String,
+      title: String,
+      price: Number,
+      description: String,
+      image: String,
+      category: String,
+      rating: Number,
+      count: Number,
+    }
+  },
 ]
-const router = createRouter({
+
+export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes
 })
-
 const app = createApp(App)
 app.use(VueFire, {
   // imported above but could also just be created here

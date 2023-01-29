@@ -10,20 +10,10 @@ import { router } from './main.js'
 import { RouterLink, RouterView } from 'vue-router'
 import { ref } from 'vue'
 import pie from './components/pie.vue'
-
-// leer de firebase
 const db = useFirestore()
 const products = useCollection(collection(db, "productos"))
 
 
-function actualizarArticuloFirebase(nota) {
-  updateDoc(doc(db, "tarea", nota.id), {
-    texto: nota.texto,
-    fecha: nota.fecha,
-    prioridad: nota.prioridad,
-    hecho: nota.hecho
-  })
-}
 
 var estaAutentificado = ref(false)
 onAuthStateChanged(auth, (user) => {
@@ -116,7 +106,7 @@ function quitarCarrito(){
             <button v-else id="inicio2" title="Logout"><router-link to="/admin" class="router"
                 @click="cambiarFormulario">Perfil admin</router-link></button>
             <li title="Carrito" @click="ponerCarrito"><router-link to="/carrito" class="router"><i class="fa-solid fa-cart-shopping"></i>
-                <span :class="['cantidadProductos', { llena: carrito.length > 0 }]">{{
+                <span :class="['cantidadProductos', { llena: cantidadProductos > 0 }]">{{
                   cantidadProductos
                 }}</span></router-link>
             </li>
@@ -124,7 +114,7 @@ function quitarCarrito(){
         </div>
       </header>
       <main :class="[{ formulario: verFormulario  && !verCarrito}, {detalle:verDetalle && !verCarrito}, {carrito:verCarrito}]">
-        <router-view @mostrarTodo="cambiarCategoria('All')" :categoria=catego :articulos=products @cambiarDetalle="cambiarDetalle" 
+        <router-view :categoria=catego :articulos=products @cambiarDetalle="cambiarDetalle" 
         @actualizarCarrito="actualizarNumeroCarrito" :carrito="carrito"></router-view>
         <!-- :categoria=catego -->
       </main>

@@ -1,7 +1,9 @@
 <script setup>
 import { ref } from 'vue'
 import {auth} from '../firebase.js'
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword,GithubAuthProvider, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
+
+
 
 var pattern = "[a-zA-Z0-9!#$%&'*\/=?^_`{|}~+-]([\.]?[a-zA-Z0-9!#$%&'*\/=?^_`{|}~+-])+@[a-zA-Z0-9]([^@&%$/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2,3})?"
 
@@ -57,6 +59,28 @@ function google(){
       });
 }
 
+function github(){
+    const provider = new GithubAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.email;
+        // The AuthCredential type that was used.
+        const credential = GithubAuthProvider.credentialFromError(error);
+        // ...
+      });
+}
+
 
 </script>
 
@@ -71,6 +95,7 @@ function google(){
             <input type="password" name="password" id="passwordsign" placeholder="Password" required v-model="contraseña">
             <button @click="login">Send</button>
             <button @click="google">Log in with google &nbsp;<i class="fa fa-google" aria-hidden="true"></i></button>
+            <button @click="github">Log in with github &nbsp;<i class="fa fa-github" aria-hidden="true"></i></button>
         </section>
     </div>
     <div id='signup'>

@@ -29,6 +29,13 @@ function restarCantidad(index) {
     else
         borrarProducto(index)
 }
+function terminar() {
+    borrarProducto(0)
+    if(props.carrito.length == 0)
+        return
+    else
+    terminar()
+}
 
 
 </script>
@@ -59,6 +66,6 @@ function restarCantidad(index) {
     </section>
     <section id="totalCarrito">
         <p>Total: <span class="color">{{Math.round((getCarritoTotal() + Number.EPSILON) * 100) / 100}}€</span></p>
-        <button class='botonCompra'>Comprar</button>
+        <button class='botonCompra' @click="terminar">Comprar</button>
     </section>
 </template>

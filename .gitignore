@@ -26,5 +26,5 @@ coverage
 *.njsproj
 *.sln
 *.sw?
-./scr/firebase.js
-./src/components/firebasevuestore.2023-01-28.private-key.pem
+scr/firebase.js
+src/components/firebasevuestore.2023-01-28.private-key.pem

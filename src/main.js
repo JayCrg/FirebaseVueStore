@@ -27,9 +27,6 @@ import { auth } from './firebase.js'
 import { onAuthStateChanged } from 'firebase/auth'
 
 window.onload = function () {
-  document.getElementsByTagName('body')[0].classList.add('carga')
-  document.getElementsByTagName('aside')[0].classList.add('carga')
-
   document.getElementsByTagName('body')[0].classList.remove('carga')
   document.getElementsByTagName('aside')[0].classList.remove('carga')
 }

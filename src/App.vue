@@ -91,7 +91,7 @@ function quitarCarrito(){
 
 <template>
 
-  <body class=''>
+  <body class='carga'>
     <div class="container">
       <header>
         <router-link to="/" class="logo" @click="quitarFormulario">
@@ -128,7 +128,7 @@ function quitarCarrito(){
         @actualizarCarrito="actualizarNumeroCarrito" :carrito="carrito"></router-view>
         <!-- :categoria=catego -->
       </main>
-      <aside class=""><i class="fa-solid fa-spinner fa-spin-pulse"></i></aside>
+      <aside class="carga"><i class="fa-solid fa-spinner fa-spin-pulse"></i></aside>
       <pie></pie>
     </div>
 
